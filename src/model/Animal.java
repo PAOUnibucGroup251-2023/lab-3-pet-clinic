@@ -24,6 +24,9 @@ public abstract class Animal {
             treatments = new Treatment[1];
             treatments[0] = treatment;
         } else {
+            for (Treatment t : treatments){
+                if (t.equals(treatment)) return;
+            }
             treatments = Arrays.copyOf(treatments, treatments.length + 1);
             treatments[treatments.length - 1] = treatment;
         }
