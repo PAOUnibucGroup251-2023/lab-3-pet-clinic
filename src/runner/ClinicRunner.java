@@ -83,7 +83,7 @@ public class ClinicRunner {
             case "caine" ->
                     a = new Dog(animal[1], Double.parseDouble(animal[2]), animal[3], Integer.parseInt(animal[4]));
             case "papagal" -> a = new Parrot(animal[1], animal[2], Boolean.parseBoolean(animal[3]));
-            default -> System.out.println("Intrare nevalida detectata " + line);
+            default -> System.out.println("Intrare nevalida detectata: " + line);
         }
         return a;
     }
@@ -98,11 +98,24 @@ public class ClinicRunner {
             if (treatments == null) {
                 treatments = new Treatment[1];
             } else {
-                treatments = Arrays.copyOf(treatments, treatments.length + 1);
+                if (!isTreatmentAlreadyInList(treatments, t)) {
+                    treatments = Arrays.copyOf(treatments, treatments.length + 1);
+                }
             }
             treatments[treatments.length - 1] = t;
         }
         input.close();
         return treatments;
+    }
+
+    private static boolean isTreatmentAlreadyInList(Treatment[] treatments, Treatment t) {
+        boolean found = false;
+        for (Treatment recordedTreatment: treatments){
+            if (recordedTreatment.equals(t)){
+                found = true;
+                break;
+            }
+        }
+        return found;
     }
 }
