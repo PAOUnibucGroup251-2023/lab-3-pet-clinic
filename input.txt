@@ -1,0 +1,4 @@
+1
+papagal,Kiki,Perus,true
+1
+Vaccinare,200
