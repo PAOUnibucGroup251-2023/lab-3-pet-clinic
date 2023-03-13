@@ -34,17 +34,17 @@ public abstract class Animal {
     protected String showListOfTreatments(){
          if (treatments == null || treatments.length == 0) return "";
          else {
-             StringBuffer result = new StringBuffer();
+             StringBuilder result = new StringBuilder();
              result.append("\nTratamente efectuate:\n");
              for (Treatment t : treatments){
-                 result.append(t.toString() + "\n");
+                 result.append(t.toString()).append("\n");
              }
              return result.toString();
          }
     }
 
     public void displayAllDetailsToConsole(){
-        System.out.println(toString() + "\n" +
+        System.out.println(this + "\n" +
                 showListOfTreatments() + "\n" +
                 "Total: " + calculateBillTotal());
     }

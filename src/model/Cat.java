@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Arrays;
-
 public class Cat extends Animal {
     private String breed;
     private String coat;

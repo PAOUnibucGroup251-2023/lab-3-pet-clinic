@@ -78,11 +78,12 @@ public class ClinicRunner {
         String[] mapping = line.split("-");
         Animal a = null;
         String[] animal = mapping[0].split(",");
-        switch(animal[0]){
-            case "pisica": a = new Cat(animal[1],animal[2],animal[3],Integer.parseInt(animal[4])); break;
-            case "caine": a = new Dog(animal[1], Double.parseDouble(animal[2]),animal[3],Integer.parseInt(animal[4]));break;
-            case "papagal": a = new Parrot(animal[1], animal[2], Boolean.parseBoolean(animal[3])); break;
-            default: System.out.println("Intrare nevalida detectata " + line);
+        switch (animal[0]) {
+            case "pisica" -> a = new Cat(animal[1], animal[2], animal[3], Integer.parseInt(animal[4]));
+            case "caine" ->
+                    a = new Dog(animal[1], Double.parseDouble(animal[2]), animal[3], Integer.parseInt(animal[4]));
+            case "papagal" -> a = new Parrot(animal[1], animal[2], Boolean.parseBoolean(animal[3]));
+            default -> System.out.println("Intrare nevalida detectata " + line);
         }
         return a;
     }
@@ -94,14 +95,12 @@ public class ClinicRunner {
             String line = input.nextLine();
             String[] fields = line.split(",");
             Treatment t = new Treatment(fields[0], Double.parseDouble(fields[1]));
-            if (t != null) {
-                if (treatments == null) {
-                    treatments = new Treatment[1];
-                } else {
-                    treatments = Arrays.copyOf(treatments, treatments.length + 1);
-                }
-                treatments[treatments.length - 1] = t;
+            if (treatments == null) {
+                treatments = new Treatment[1];
+            } else {
+                treatments = Arrays.copyOf(treatments, treatments.length + 1);
             }
+            treatments[treatments.length - 1] = t;
         }
         input.close();
         return treatments;
