@@ -49,11 +49,11 @@ public class ClinicRunner {
         Animal[] animals = null;
         while (input.hasNextLine()){
             String line = input.nextLine();
-            String[] mapping = line.split("-");
 
-            Animal a = createAnimal(line, mapping);
+            Animal a = createAnimal(line);
 
             if (a != null) {
+                String[] mapping = line.split("-");
                 String[] treatmentDescriptions = mapping[1].split(",");
                 for (String treatmentDescription: treatmentDescriptions) {
                     for (Treatment t : treatments) {
@@ -74,7 +74,8 @@ public class ClinicRunner {
         return animals;
     }
 
-    private static Animal createAnimal(String line, String[] mapping) {
+    private static Animal createAnimal(String line) {
+        String[] mapping = line.split("-");
         Animal a = null;
         String[] animal = mapping[0].split(",");
         switch(animal[0]){
