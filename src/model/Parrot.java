@@ -38,8 +38,8 @@ public class Parrot extends Animal{
 
     @Override
     public String toString() {
-        return "Name: " + getName() + "\n" +
-                "Species: " + species + "\n" +
-                "Small: " + (isSmall()? "yes": "no");
+        return "Nume: " + getName() + "\n" +
+                "Specie: " + species + "\n" +
+                "Mic: " + (isSmall()? "da": "nu");
     }
 }

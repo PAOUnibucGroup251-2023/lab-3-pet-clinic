@@ -35,6 +35,7 @@ public abstract class Animal {
          if (treatments == null || treatments.length == 0) return "";
          else {
              StringBuffer result = new StringBuffer();
+             result.append("\nTratamente efectuate:\n");
              for (Treatment t : treatments){
                  result.append(t.toString() + "\n");
              }

@@ -1,0 +1,3 @@
+Vaccinare,200
+Deparazitare,100
+Toaleta,300

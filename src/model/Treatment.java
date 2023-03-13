@@ -27,9 +27,7 @@ public class Treatment {
 
     @Override
     public String toString() {
-        return "Treatment{" +
-                "description='" + description + '\'' +
-                ", price=" + price +
-                '}';
+        return "Descriere: " + description +
+                ", Pret de baza=" + price;
     }
 }
